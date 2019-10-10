@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Who Are You Today? </h1>
+<button id="btnPassenger" value="passenger" onclick="location.href='@Url.Action("Passenger", "Home")'">Passenger</button>
+<br />
+<a id="btnDriver" asp-controller="Vehicle" asp-action="Index" asp-route-UserId="3">Driver</a>
+<p>This button has a hardcoded value of 3 for UserId</p>

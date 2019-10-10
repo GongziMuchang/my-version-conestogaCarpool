@@ -1,0 +1,78 @@
+﻿@model IEnumerable<ConestogaCarpoolApplication.Models.Post>
+
+<h2>List Of Drivers</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver.LicenceClassId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver.Experience)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Driver.Email)
+            </td>
+            <td>
+                <a asp-controller="Post" asp-action="Details"  asp-route-id="@item.PostId">@item.Driver.FirstName</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Driver.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Driver.LicenceClassId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Driver.Experience)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status.Status)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

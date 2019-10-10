@@ -1,0 +1,32 @@
+﻿<script type="text/javascript">
+    function validate()
+    {
+        var username = usernameInput.value;
+        var password = passwordInput.value;
+
+        if (username.includes("conestogac.on.ca"))
+        {
+            url = '/Home/PassengerOrDriver';
+
+            window.location.href = url;
+        }
+    }
+</script>
+
+<!DOCTYPE html>
+<html>
+<body>
+    <br /><br /><br /><br /><br /><br />
+
+    In this stage, enter a conestoga email to log in. No need of password for this stage.
+
+    <br /><br /><br /><br /><br /><br />
+    Enter your username:&nbsp&nbsp&nbsp&nbsp
+    <input type="text" id="usernameInput">
+    <br /><br />
+    Enter your password:&nbsp&nbsp&nbsp&nbsp
+    <input type="password" id="passwordInput">
+    <br /><br /><br /><br />
+    <button type="button" onclick="validate()">Log In</button>
+</body>
+</html>

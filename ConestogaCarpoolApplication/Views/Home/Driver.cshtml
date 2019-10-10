@@ -1,0 +1,43 @@
+﻿<script type="text/javascript">
+    function myFunction()
+    {
+        var location = sltCampus.value;
+        var destination = txtDestination.value;
+
+        var url = '/Post/DriverIndex?Location=' + location + '&Destination=' + destination;
+
+        window.location.href = url;
+    }
+</script>
+
+<html>
+<body>
+    <h2>Hello, Driver</h2>
+
+    <br />
+    <br />
+
+    <label>Select your location</label>
+    &nbsp&nbsp&nbsp&nbsp
+    <select id="sltCampus">
+        <option value="Kitchener">Kitchener</option>
+        <option value="Waterloo">Waterloo</option>
+        <option value="Guelph">Guelph</option>
+        <option value="Cambridge">Cambridge</option>
+    </select>
+
+    <br />
+    <br />
+
+    <label>Enter your destination</label>
+    &nbsp&nbsp&nbsp&nbsp
+    <input id="txtDestination" type="text" />
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <button id="btnRequest" onclick="myFunction()">Find Passengers</button>
+</body>
+</html>
